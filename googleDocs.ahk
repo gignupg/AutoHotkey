@@ -12,6 +12,12 @@ SecondClickXGreen := FirstClickX + 188
 SecondClickXYellow := FirstClickX + 147
 SecondClickXPurple := FirstClickX + 349
 
+; Headings
+HeadingX := 674
+HeadingOneY := FirstClickY + 500
+HeadingTwoY := FirstClickY + 630
+HeadingThreeY := FirstClickY + 760
+
 ; Define sleep duration
 SleepDuration := 50
 
@@ -60,5 +66,29 @@ MouseGetPos, x, y
 MouseClick, left, %FirstClickX%, %FirstClickY%
 Sleep, %SleepDuration%
 MouseClick, left, %SecondClickXPurple%, %SecondClickY%
+MouseMove, %x%, %y%
+return
+
+LAlt & 1:: ;heading 1
+MouseGetPos, x, y
+MouseClick, left, %HeadingX%, %FirstClickY%
+Sleep, %SleepDuration%
+MouseClick, left, %HeadingX%, %HeadingOneY%
+MouseMove, %x%, %y%
+return
+
+LAlt & 2:: ;heading 2
+MouseGetPos, x, y
+MouseClick, left, %HeadingX%, %FirstClickY%
+Sleep, %SleepDuration%
+MouseClick, left, %HeadingX%, %HeadingTwoY%
+MouseMove, %x%, %y%
+return
+
+LAlt & 3:: ;heading 3
+MouseGetPos, x, y
+MouseClick, left, %HeadingX%, %FirstClickY%
+Sleep, %SleepDuration%
+MouseClick, left, %HeadingX%, %HeadingThreeY%
 MouseMove, %x%, %y%
 return
