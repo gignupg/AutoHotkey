@@ -14,6 +14,7 @@ SecondClickXPurple := FirstClickX + 349
 
 ; Headings
 HeadingX := 674
+HeadingZeroY := FirstClickY + 230
 HeadingOneY := FirstClickY + 500
 HeadingTwoY := FirstClickY + 630
 HeadingThreeY := FirstClickY + 760
@@ -91,4 +92,24 @@ MouseClick, left, %HeadingX%, %FirstClickY%
 Sleep, %SleepDuration%
 MouseClick, left, %HeadingX%, %HeadingThreeY%
 MouseMove, %x%, %y%
+return
+
+:*:dduu::
+FormatTime, CurrentDate,, dd.MM.yyyy ; Formats current date as dd.MM.yyyy
+Send, {Enter}Deutschunterricht %CurrentDate%
+Sleep, %SleepDuration%
+MouseGetPos, x, y
+MouseClick, left, %HeadingX%, %FirstClickY%
+Sleep, %SleepDuration%
+MouseClick, left, %HeadingX%, %HeadingZeroY%
+MouseMove, %x%, %y%
+Sleep, %SleepDuration%
+Send, {Enter}Notizen
+Sleep, %SleepDuration%
+MouseGetPos, x, y
+MouseClick, left, %HeadingX%, %FirstClickY%
+Sleep, %SleepDuration%
+MouseClick, left, %HeadingX%, %HeadingOneY%
+MouseMove, %x%, %y%
+Send, {Enter}
 return
