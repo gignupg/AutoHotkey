@@ -95,8 +95,17 @@ MouseMove, %x%, %y%
 return
 
 :*:dduu::
-FormatTime, CurrentDate,, dd.MM.yyyy ; Formats current date as dd.MM.yyyy
-Send, {Enter}Deutschunterricht %CurrentDate%
+FormatTime, CurrentDate,, dd.MM.yyyy
+FormatTime, ReverseDate,, yyyy.MM.dd
+MouseClick, left, 280, 170
+Sleep, %SleepDuration%
+Send, Deutschunterricht %ReverseDate%
+Sleep, %SleepDuration%
+MouseClick, left, 60, 380
+Sleep, %SleepDuration%
+MouseClick, left, 1837, 290
+Sleep, %SleepDuration%
+Send, Deutschunterricht %CurrentDate%
 Sleep, %SleepDuration%
 MouseGetPos, x, y
 MouseClick, left, %HeadingX%, %FirstClickY%
@@ -112,4 +121,22 @@ Sleep, %SleepDuration%
 MouseClick, left, %HeadingX%, %HeadingOneY%
 MouseMove, %x%, %y%
 Send, {Enter}
+Sleep, %SleepDuration%
+MouseClick, left, 470, 180
+Sleep, %SleepDuration%
+MouseClick, left, 480, 640
+return
+
+:*:cnd::
+MouseClick, left, 644, 500
+Sleep, 500
+Send, {Ctrl down}
+Click 2
+Send, {Ctrl up}
+Sleep, %SleepDuration%
+MouseClick, left, 111, 282 ; Create New Document
+Sleep, %SleepDuration%
+MouseClick, left, 248, 465
+Sleep, %SleepDuration%
+MouseClick, left, 1217, 692
 return
